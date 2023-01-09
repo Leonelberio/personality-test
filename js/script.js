@@ -3,6 +3,12 @@ var selectedIndexes = [];
 var questionIndex = undefined;
 var selectedAnswers = [null, null, null, null, null];
 
+// const questions = document.querySelectorAll('.question');
+const slider = document.querySelector('.slider');
+
+
+
+
 const startTest = () => {
   //generate 5 random questions indexes
   selectedIndexes = [];
@@ -14,6 +20,9 @@ const startTest = () => {
     } while (selectedIndexes.includes(number));
     selectedIndexes.push(number);
     count++;
+
+  
+
   }
 
   //show
@@ -26,6 +35,8 @@ const startTest = () => {
 
   //set the question number
   document.getElementById("counter").innerHTML = questionIndex + 1;
+
+ 
 
   //disable previous button and next button
   document.getElementById("next").style.pointerEvents = "none";
@@ -97,6 +108,7 @@ const displayQuestion = (questionObj) => {
 
   if (questionIndex === LAST_QUESTION - 1) {
     document.getElementById("next").innerHTML = "Finish";
+    
   } else {
     document.getElementById("next").innerHTML = "Next question >";
   }
@@ -105,6 +117,17 @@ const displayQuestion = (questionObj) => {
 const nextQuestion = () => {
   if (questionIndex < selectedIndexes.length - 1) {
     questionIndex++;
+    
+
+  
+      // Increase the value of the slider by 1 each time the user selects an answer
+      slider.value = parseInt(slider.value) + 20;
+
+      slider.setAttribute('value', slider.value)
+
+    document.getElementById("slidercount").innerHTML = slider.value;
+
+   
     let questionObj = questions[selectedIndexes[questionIndex]];
     //console.log(questionObj);
 
@@ -132,6 +155,14 @@ const previousQuestion = () => {
   console.log(questionIndex);
   if (questionIndex > 0) {
     questionIndex--;
+    slider.addEventListener('input', () => {
+      // Increase the value of the slider by 1 each time the user selects an answer
+      slider.value = parseInt(slider.value) - 20;
+
+      slider.setAttribute('value', slider.value)
+
+    document.getElementById("slidercount").innerHTML = slider.value;
+    });
 
     let questionObj = questions[selectedIndexes[questionIndex]];
     //console.log(questionObj);
@@ -164,11 +195,16 @@ const selectedAnswer = (ans) => {
   //user answer so we can display it at the end
   selectedAnswers[questionIndex] = ans;
   //console.log(selectedAnswers);
+  
 };
 
 //function to show the chosen question and answer. For summary at the end of the test
 const showElement = (questionObj, chosenAnswer, index) => {
   let element = "";
+
+  slider.value = 100;
+  document.getElementById("slidercount").innerHTML = slider.value;
+
 
   switch (chosenAnswer) {
     case 0:

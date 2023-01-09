@@ -16,6 +16,10 @@
 
     <div class="container">
       <div class="question-container">
+        <div class="sliderblock">
+          <input type="range" class="slider" step="20" min="0" max="100" value="0">
+          <p id="slidercount" class="range-slider__value">0</p>
+        </div>
         <div id="question-count">Question <span id="counter"></span>/5</div>
         <div id="question"></div>
         <div class="ans" id="div-ans-a" onclick="selectedAnswer(0)">
