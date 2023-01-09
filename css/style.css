@@ -1,0 +1,180 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+.header-image{
+    width: 40%;
+}
+
+.start-test{
+    margin-top: 50px;
+    background: black;
+    color: white;
+    font-size: 32px;
+    padding: 10px 20px 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.start-test:hover{
+    background-color: darkgoldenrod;
+}
+
+.container{
+    display: none;
+    flex-direction: row;
+}
+
+.question-container{
+    margin: 40px;
+    width: 50%;
+   
+}
+
+#question-count{
+    font-weight: bold;
+    font-size: 0.8rem;
+    color: gray;
+}
+
+#question{
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+.ans{
+    margin-top: 20px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    /* padding: 10px 0px 10px 0px; */
+    cursor: pointer;
+    display: flex;
+}
+
+.my-alpha{
+    font-weight: bold;
+    padding: 10px;
+    background-color: darkgoldenrod;
+    margin-right: 10px;
+    /* display: block; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.your-answers{
+    margin: 40px;
+    width: 50%;
+    background-color: #eff3f6dd;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.my-question {
+    padding: 10px 0px 10px 0px;
+}
+
+.btn{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 40px;
+}
+
+#previous, #next{
+    background-color: rgb(14, 14, 14);
+    padding: 10px 20px 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+}
+
+#restart{
+    background-color: black;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 10px 20px 10px 20px;
+    border-radius: 50px;
+}
+#restart:hover{
+    background-color: darkgoldenrod;
+    color: white;
+   
+}
+
+
+.title{
+    font-size: 24px;
+    margin-bottom: 40px;
+    background-color: darkgoldenrod;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#test-result{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+    background-color: #eff3f6dd;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+#image{
+    width: 40%;
+    border-radius: 20px;
+}
+
+#trait{
+    margin-top: 40px;
+}
+
+#trait-title{
+    font-size: 30px;
+}
+
+#trait div{
+    margin-top: 20px;
+}
+
+#trait ul{
+    margin-top: 20px
+}
+
+#trait ul li{
+    margin-top: 10px;
+}
+
+/* Extra small devices (phones, 768px and down) */
+@media only screen and (max-width: 868px) {
+    .container{
+        flex-direction: column;
+        align-items: center;
+        margin: 5px;
+    }
+    .question-container{
+        margin: 20px;
+        width: 80%
+    }
+    .welcome {
+        margin-top: 10px;
+    }
+    .header-image{
+        width: 80%;
+    }
+
+    .your-answers{
+        width: 80%;
+    }
+}
