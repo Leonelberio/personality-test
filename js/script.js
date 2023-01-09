@@ -155,14 +155,15 @@ const previousQuestion = () => {
   console.log(questionIndex);
   if (questionIndex > 0) {
     questionIndex--;
-    slider.addEventListener('input', () => {
-      // Increase the value of the slider by 1 each time the user selects an answer
-      slider.value = parseInt(slider.value) - 20;
 
+      // Increase the value of the slider by 20 each time the user selects an answer
+
+      slider.value = parseInt(slider.value) - 20;
+     
       slider.setAttribute('value', slider.value)
 
     document.getElementById("slidercount").innerHTML = slider.value;
-    });
+
 
     let questionObj = questions[selectedIndexes[questionIndex]];
     //console.log(questionObj);
